@@ -1,0 +1,40 @@
+<div class="create-game-page">
+  <header>
+    <img src="assets/images/ficha-de-poker 1 (1).svg" alt="Logo" />
+    <h1>Crear partida</h1>
+  </header>
+
+  <form [formGroup]="gameForm" (ngSubmit)="onCreateGame()" class="create-game-form">
+    <div class="input-with-label">
+      <label for="gameName">Nombre de la partida</label>
+      <input
+        id="gameName"
+        type="text"
+        formControlName="gameName"
+        placeholder="Ingresa el nombre"
+      />
+
+      <div *ngIf="gameNameControl?.errors && gameNameControl?.touched" class="error">
+        <span *ngIf="gameNameControl?.errors?.['required']">
+          El nombre es requerido
+        </span>
+        <span *ngIf="gameNameControl?.errors?.['minlength']">
+          El nombre debe tener al menos 5 caracteres
+        </span>
+        <span *ngIf="gameNameControl?.errors?.['maxlength']">
+          El nombre no puede tener más de 20 caracteres
+        </span>
+        <span *ngIf="gameNameControl?.errors?.['pattern']">
+          El nombre debe contener solo letras, números y espacios
+        </span>
+        <span *ngIf="gameNameControl?.errors?.['maxThreeNumbers']">
+          El nombre no puede contener más de 3 números
+        </span>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="gameForm.invalid">
+      Crear partida
+    </button>
+  </form>
+</div>
