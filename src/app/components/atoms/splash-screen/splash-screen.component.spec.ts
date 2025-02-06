@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SplashScreenComponent } from './splash-screen.component';
+import { LogoComponent } from '../logo/logo.component';
 
 describe('SplashScreenComponent', () => {
   let component: SplashScreenComponent;
@@ -8,7 +8,9 @@ describe('SplashScreenComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SplashScreenComponent]
+      imports: [SplashScreenComponent],
+      declarations: [LogoComponent]
+
     })
     .compileComponents();
 

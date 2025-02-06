@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
   selector: 'app-splash-screen',
-  standalone: false,
-
+  standalone: true,
   templateUrl: './splash-screen.component.html',
-  styleUrl: './splash-screen.component.css'
+  styleUrl: './splash-screen.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SplashScreenComponent {
 

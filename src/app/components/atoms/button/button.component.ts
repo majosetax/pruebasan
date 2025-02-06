@@ -1,16 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
-  standalone: false,
-
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './button.component.html',
   styleUrl: './button.component.css'
 })
 export class ButtonComponent {
-  @Input() label: string = '';
-  @Input() type: string = 'button';
-  @Input() isDisabled: boolean = false;
-
-  constructor() {}
+  @Input() text!: string;
+  @Input() disabled = false;
 }

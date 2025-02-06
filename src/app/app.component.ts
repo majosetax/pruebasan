@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  title = 'poker-pragma';
   showSplashScreen = true;
 
   constructor(private readonly router: Router) {}

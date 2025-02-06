@@ -1,10 +1,7 @@
 <div class="input-with-label">
-  <label>{{ label }}
-    <input
-      [type]="type"
-      [formControl]="control"
-      [placeholder]="placeholder"
-      [required]="required"
-    />
-  </label>
+  <label [for]="id">{{ label }}</label>
+  <input [id]="id" type="text" [formControl]="control" />
+  <span *ngIf="control.invalid && (control.dirty || control.touched)">
+    {{ getErrorMessage() }}
+  </span>
 </div>
